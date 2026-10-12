@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOSTFind</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Paystack Inline JS -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <style>
+        .detail-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Gallery Styles */
+        .main-image-container {
+            width: 100%;
+            height: 420px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .main-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .thumbnail-grid img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .thumbnail-grid img.active {
+            border-color: var(--primary-color, #0d233a);
+        }
+
+        /* Amenities Badges */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .amenity-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg-color, #f4f6f8);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--primary-color, #0d233a);
+            font-weight: 500;
+        }
+
+        /* Sticky Contact Unlock Card */
+        .unlock-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color, #eef2f5);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 90px;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color, #0d233a);
+        }
+
+        .locked-box {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .blur-contact {
+            filter: blur(5px);
+            user-select: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #64748b;
+        }
+
+        @media (max-width: 900px) {
+            .detail-layout {
+                grid-template-columns: 1fr;
+            }
+            .main-image-container {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+             <a href="index.html" class="brand-logo" style="display: flex; align-items: center; text-decoration: none; border-radius: 20px; margin-left: 10%;">
+    <img src="img/HOSTFind_logo_blue_black_gold_upscaled.png" alt="UCC Hostel Finder Logo" style="height: 45px !important; width: auto !important; max-height: 45px !important; display: block !important;">
+</a>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hostels.html" class="active">Find Hostels</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="hostels.html" class="btn btn-primary nav-cta">Find a Hostel</a>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Room Detail Main Container -->
+    <main class="container section" id="detail-container">
+        <!-- Breadcrumb navigation -->
+        <p style="margin-bottom: 20px; font-size: 14px; color: var(--text-light);">
+            <a href="hostels.html" style="color: var(--primary-color); text-decoration: none;">← Back to All Hostels</a>
+        </p>
+
+        <div class="detail-layout">
+            <!-- Left Side: Main Info & Gallery -->
+            <div class="hostel-main-content">
+                <h1 id="hostel-name" style="color: var(--primary-color); margin-bottom: 8px;">Loading Hostel...</h1>
+                <p id="hostel-location" style="color: var(--text-light); font-size: 1rem; margin-bottom: 20px;">
+                    <i class="fa-solid fa-location-dot"></i> Cape Coast
+                </p>
+
+                <!-- Image Gallery -->
+                <div class="main-image-container">
+                    <img id="main-gallery-img" src="" alt="Hostel Room View">
+                </div>
+                <div class="thumbnail-grid" id="thumbnail-grid">
+                    <!-- Thumbnails inserted via JavaScript -->
+                </div>
+
+                <hr style="margin: 30px 0; border: none; border-top: 1px solid var(--border-color, #eef2f5);">
+
+                <!-- Description -->
+                <h3>About This Hostel</h3>
+                <p id="hostel-description" style="color: #475569; line-height: 1.7; margin-top: 10px;">
+                    Loading description...
+                </p>
+
+                <h3 style="margin-top: 30px;">Included Amenities</h3>
+                <div class="amenities-grid" id="amenities-grid">
+                    <!-- Amenity badges inserted via JS -->
+                </div>
+            </div>
+
+            <!-- Right Side: Unlock Manager Contact & Booking Box -->
+            <aside>
+                <div class="unlock-card">
+                    <div style="margin-bottom: 15px;">
+                        <span style="font-size: 13px; color: var(--text-light);">Starting Price</span>
+                        <div class="price-tag" id="hostel-price">GH₵ 0</div>
+                        <span style="font-size: 13px; color: #64748b;">Per Academic Year</span>
+                    </div>
+
+                    <hr style="border: none; border-top: 1px solid var(--border-color, #eef2f5); margin: 15px 0;">
+
+                    <!-- Locked State -->
+                    <div id="locked-state">
+                        <div class="locked-box">
+                            <i class="fa-solid fa-lock" style="font-size: 24px; color: var(--primary-color); margin-bottom: 8px;"></i>
+                            <h4 style="margin-bottom: 5px;">Manager Contact Locked</h4>
+                            <p class="blur-contact">+233 24 XXX XXXX</p>
+                            <p style="font-size: 12px; color: #64748b; margin-top: 8px;">
+                                Pay a tiny GH₵ 50 fee to unlock verified direct phone number & WhatsApp contact.
+                            </p>
+                        </div>
+
+                        <button id="unlock-btn" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 14px;">
+                            <i class="fa-solid fa-key"></i> Unlock Contact (GH₵ 50)
+                        </button>
+                    </div>
+
+                    <!-- Unlocked State (Hidden by default) -->
+                    <div id="unlocked-state" style="display: none;">
+                        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 15px;">
+                            <i class="fa-solid fa-circle-check" style="font-size: 28px; color: #16a34a; margin-bottom: 8px;"></i>
+                            <h4 style="color: #15803d;">Contact Unlocked!</h4>
+                            <p id="manager-name" style="font-weight: 600; margin-top: 5px; color: #1e293b;">Manager: Loading...</p>
+                            <p id="manager-phone" style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 8px 0;">+233 00 000 0000</p>
+                        </div>
+
+                        <a id="whatsapp-btn" href="#" target="_blank" class="btn" style="width: 100%; background: #25d366; color: #fff; text-align: center; font-size: 1rem; padding: 14px;">
+                            <i class="fa-brands fa-whatsapp"></i> Chat Manager on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 UCC HOSTFind. Built for University of Cape Coast Students.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/hostel-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/hostel-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us-HOSTFind</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .contact-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .contact-item i {
+            font-size: 20px;
+            color: var(--primary-color);
+            background: var(--bg-color);
+            padding: 12px;
+            border-radius: 50%;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+             <a href="index.html" class="brand-logo" style="display: flex; align-items: center; text-decoration: none; border-radius: 20px; margin-left: 10%;">
+    <img src="img/HOSTFind_logo_blue_black_gold_upscaled.png" alt="UCC Hostel Finder Logo" style="height: 45px !important; width: auto !important; max-height: 45px !important; display: block !important;">
+</a>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <!-- <li><a href="hostels.html">Find Hostels</a></li> -->
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="hostels.html" class="btn btn-primary nav-cta">Find a Hostel</a>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Section -->
+    <section class="section" style="background: var(--bg-color); text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h1 class="section-title">Get in Touch with Us</h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-light);">
+                Have questions about booking, payment unlocking, or want to list your hostel property on our portal? We're here to help.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="section container">
+        <div class="contact-grid">
+            
+            <!-- Contact Details -->
+            <div class="contact-card">
+                <h3 style="margin-bottom: 25px; color: var(--primary-color);">Contact Information</h3>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Campus Office</strong>
+                        <p style="color: var(--text-light); font-size: 14px; margin-top: 3px;">
+                            University of Cape Coast, Science Gate Area, Cape Coast, Ghana
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Phone & WhatsApp Support</strong>
+                        <p style="color: var(--text-light); font-size: 14px; margin-top: 3px;">
+                            +233 (0) 54 959 3971 / +233 (0) 54 750 5499
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>Email Address</strong>
+                        <p style="color: var(--text-light); font-size: 14px; margin-top: 3px;">
+                            support.hostfind@gmail.com
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <strong>Working Hours</strong>
+                        <p style="color: var(--text-light); font-size: 14px; margin-top: 3px;">
+                            Monday – Sunday: 6:30 AM – 6:00 PM
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-card">
+                <h3 style="margin-bottom: 20px; color: var(--primary-color);">Send Us a Message</h3>
+                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" id="contactName" required placeholder="e.g. Saviour Odai">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address or Phone</label>
+                        <input type="text" id="contactEmail" required placeholder="e.g. student@ucc.edu.gh or 024XXXXXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactSubject">Inquiry Type</label>
+                        <select id="contactSubject" required>
+                            <option value="student">Student Inquiry / Room Help</option>
+                            <option value="manager">Hostel Manager Property Listing</option>
+                            <option value="payment">Paystack Payment Support</option>
+                            <option value="other">General Question</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" rows="5" required placeholder="Write your message or hostel details here..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Township Drone Banner -->
+    <div class="container">
+        <section class="township-banner">
+            <h2>Are You a Hostel Manager in Amamoma, Kwaprow, or Abura?</h2>
+            <p>List your rooms directly on HOSTFind to reach thousands of student applicants every semester.</p>
+            <a href="#contactForm" onclick="document.getElementById('contactSubject').value='manager'" class="btn btn-accent">
+                <i class="fa-solid fa-building-circle-check"></i> Register Your Hostel
+            </a>
+        </section>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <!-- <a id="wa-float" href="#" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a> -->
+
+    <!-- Footer -->
+    <!-- <footer>
+        <p>&copy; 2026 UCC Hostel Finder. Built for University of Cape Coast Students.</p>
+    </footer> -->
+
+    <!-- JavaScript Files -->
+    <script src="js/hostel-data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for reaching out! Our UCC Hostel Finder team will respond to your message shortly.');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+
+
+
+</body>
+</html>

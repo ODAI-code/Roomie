@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOSTFind</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Paystack Inline JS -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body class="bg-light">
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-dark">
+         <a href="index.html" class="brand-logo" style="display: flex; align-items: center; text-decoration: none; border-radius: 20px; margin-left: 10%;">
+    <img src="img/HOSTFind_logo_blue_black_gold_upscaled.png" alt="UCC Hostel Finder Logo" style="height: 45px !important; width: auto !important; max-height: 45px !important; display: block !important;">
+</a>
+            <!-- <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button> -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hostels.html" class="active">Find Hostels</a></li>
+                <li><a href="locations.html">Locations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-layout">
+        <!-- FILTERS SIDEBAR -->
+        <aside class="filters-sidebar">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <label>Location</label>
+                <select id="filterLocation">
+                    <option value="All">All Locations</option>
+                    <option value="Amamoma">Amamoma</option>
+                    <option value="Kwaprow">Kwaprow</option>
+                    <option value="Apewosika">Apewosika</option>
+                    <option value="Abura">Abura</option>
+                    <option value="Ola">Ola</option>
+                    <option value="North Campus">North Campus</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Room Type</label>
+                <select id="filterRoom">
+                    <option value="All">All Types</option>
+                    <option value="1-in-a-room">1-in-a-room</option>
+                    <option value="2-in-a-room">2-in-a-room</option>
+                    <option value="3-in-a-room">3-in-a-room</option>
+                    <option value="4-in-a-room">4-in-a-room</option>
+                </select>
+            </div>
+            <button id="applyFiltersBtn" class="btn btn-primary w-100">Apply Filters</button>
+            <button id="resetFiltersBtn" class="btn btn-secondary w-100 mt-2">Reset</button>
+        </aside>
+
+        <!-- HOSTEL GRID -->
+        <main class="hostels-content">
+            <div class="search-header">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by name, location, or amenity...">
+            </div>
+            <div id="hostelGrid" class="hostel-grid">
+                <!-- Hostels injected via JS -->
+            </div>
+            <div id="noResults" class="hidden">
+                <p>No hostels found matching your criteria.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- ROOM DETAILS MODAL -->
+    <div id="roomModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="roomModalBody">
+                <!-- Details injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOK & PAY MODAL -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content payment-content">
+            <span class="close-modal">&times;</span>
+            <h2>Unlock Manager Details</h2>
+            <div class="payment-notice">
+                <p><strong>Note:</strong> Pay GH₵35.00 to unlock the verified hostel manager's contact information and payment details. This does NOT include hostel rent.</p>
+            </div>
+            
+            <div id="paymentHostelSummary" class="payment-summary"></div>
+            
+            <form id="paymentForm" class="payment-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="payName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="payEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="payPhone" required>
+                </div>
+                <button type="submit" class="btn btn-accent w-100">Pay GH₵35.00 & Unlock Details</button>
+            </form>
+
+            <div id="paymentSuccess" class="hidden success-state">
+                <!-- Success info injected via JS -->
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- ADVERTISEMENT / CAMPUS SERVICES BANNER -->
+
+
+
+
+    <script src="js/hostel-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

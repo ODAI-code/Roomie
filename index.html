@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOSTFind</title>
+    <meta name="description" content="Discover trusted student hostels around the University of Cape Coast, compare prices, explore rooms and connect with hostel managers.">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+           <a href="index.html" class="brand-logo" style="display: flex; 
+           align-items: center; text-decoration: none; border-radius: 20px; margin-left: 10%;">
+
+    <img src="img/HOSTFind_logo_blue_black_gold_upscaled.png" alt="UCC Hostel Finder Logo" 
+    style="height: 45px !important; width: auto !important; max-height: 45px !important; display: block !important;">
+</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <!-- <li><a href="hostels.html">Find Hostels</a></li> -->
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="hostels.html" class="btn btn-primary">Find a Hostel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Find Your Perfect Hostel Around UCC Campus</h1>
+            <p>Discover trusted student hostels around the University of Cape Coast, 
+                compare prices, explore rooms and connect with hostel managers.</p>
+            
+            <form action="hostels.html" method="GET" class="search-box">
+                <input type="text" name="query" placeholder="Search hostel name, location, or amenity..." aria-label="Search hostels">
+                <button type="submit" class="btn btn-accent">Search</button>
+            </form>
+
+            <div class="quick-filters">
+                <span>Quick Locations:</span>
+                <a href="hostels.html?location=Amamoma">Amamoma</a>
+                <a href="hostels.html?location=Kwaprow">Kwaprow</a>
+                <a href="hostels.html?location=Apewosika">Apewosika</a>
+                <a href="hostels.html?location=Ola">Ola</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- CAMPUS SERVICES PROMO BANNER -->
+<section class="services-banner-section">
+    <div class="container">
+        <div class="promo-banner-card">
+            <!-- Slide Container -->
+            <div class="promo-slides" id="promoSlides">
+                
+                <!-- Slide 1: Laundry Service -->
+                <div class="promo-slide active">
+                    <div class="promo-tag">Featured Service</div>
+                    <div class="promo-content">
+                        <div class="promo-text">
+                            <h3>🧺 Express Campus Laundry Service</h3>
+                            <p>Fast pickup & drop-off at Amamoma, Kwaprow & Apewosika. Clean & fresh guarantee!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Printing & Stationeries -->
+                <div class="promo-slide">
+                    <div class="promo-tag">Campus Partner</div>
+                    <div class="promo-content">
+                        <div class="promo-text">
+                            <h3>🖨️ Klynx Printing & Copy Center</h3>
+                            <p>High-speed printing, binding & project report finishing right near North Campus.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Water Delivery -->
+                <div class="promo-slide">
+                    <div class="promo-tag">Essential Service</div>
+                    <div class="promo-content">
+                        <div class="promo-text">
+                            <h3>💧 Doorstep Water Sachet & Bottle Delivery</h3>
+                            <p>Get bulk drinking water delivered straight to your hostel floor with zero extra hassle.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Action Button -->
+            <div class="promo-action">
+                <a href="campus-market.html" class="btn btn-accent promo-btn">
+                    Explore Market & Other Services →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   <!-- Township Drone View Section -->
+<div class="container">
+    <section class="township-Drone">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Find, inspect, and secure your UCC hostel in three simple steps.</p>
+
+        <!-- Outer wrapper to hide overflow -->
+        <div class="steps-marquee-wrapper">
+            <div class="steps-container">
+                <!-- ORIGINAL CARDS -->
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3>1. Search</h3>
+                    <p>Find hostels by location, price, or amenities.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3>2. Review</h3>
+                    <p>Check images, rules, and verify details.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-unlock-keyhole"></i>
+                    </div>
+                    <h3>3. Unlock & Connect</h3>
+                    <p>Pay a small GH₵35 fee to unlock direct manager contact details.</p>
+                </div>
+
+                <!-- DUPLICATE CARDS FOR INFINITE SEAMLESS LOOP -->
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3>1. Search</h3>
+                    <p>Find hostels by location, price, or amenities.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3>2. Review</h3>
+                    <p>Check images, rules, and verify details.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fa-solid fa-unlock-keyhole"></i>
+                    </div>
+                    <h3>3. Unlock & Connect</h3>
+                    <p>Pay a small GH₵35 fee to unlock direct manager contact details.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ATTRACTIVE ALERT / NOTE BOX -->
+        <div class="alert-note-box" style="margin-top: 40px;">
+            <div class="alert-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="alert-text">
+                <strong>IMPORTANT NOTE FOR STUDENTS:</strong>
+                The GH₵35.00 fee is an <em>unlock fee</em> to reveal direct contact details for hostel managers. 
+                It is separate from hostel rent and non-refundable once unlocked. Always verify room availability before making rental payments.
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+    <!-- LOCATIONS SECTION -->
+    <section class="locations-section">
+        <div class="container">
+            <h2 class="section-title">Explore Hostels by Location</h2>
+            <div class="location-grid">
+                <a href="hostels.html?location=Amamoma" class="location-card">
+                    <!-- <div class="step-icon"><i class="fa-solid fa-house"></i></div> -->
+                     
+                
+                    <h3>Amamoma Hostels</h3>
+                    <p>Popular student accommodation</p>
+                </a>
+                <a href="hostels.html?location=Kwaprow" class="location-card">
+                    <h3>Kwaprow Hostels</h3>
+                    <p>Quiet & close to campus</p>
+                </a>
+                <a href="hostels.html?location=Apewosika" class="location-card">
+                    <h3>Apewosika Hostels</h3>
+                    <p>Affordable living spaces</p>
+                </a>
+                <a href="hostels.html?location=Abura" class="location-card">
+                    <h3>Abura Hostels</h3>
+                    <p>Vibrant student community</p>
+                </a>
+                <a href="hostels.html?location=Ola" class="location-card">
+                    <h3>Ola Hostels</h3>
+                    <p>Premium access to facilities</p>
+                </a>
+                <a href="hostels.html?location=North Campus" class="location-card">
+                    <h3>North Campus Hostels</h3>
+                    <p>Closest to academic areas</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Township Drone CTA Banner -->
+<div class="container">
+    <section class="township-banner">
+        <h2>Ready to Secure Your Campus Accommodation?</h2>
+        <p>Explore verified hostels across Amamoma, Kwaprow, Apewosika, Abura, Ola, and North Campus without hassle.</p>
+        <a href="hostels.html" class="btn btn-accent" style="padding: 12px 30px; font-size: 1rem;">
+            <i class="fa-solid fa-compass"></i> Explore All Hostels
+        </a>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>HOSTFind</h3>
+                <p>Helping students discover accommodation around the University of Cape Coast.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hostels.html">Find Hostels</a></li>
+                    <li><a href="locations.html">Locations</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Student Resources</h3>
+                <ul>
+                    <li><a href="faqs.html">FAQs</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>Email: support.hostfind.com</p>
+                <p>WhatsApp: +233 549593971</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HOSTFind. All Rights Reserved.</p>
+            <p class="disclaimer">Not officially affiliated with the University of Cape Coast unless formally authorized.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="#" id="whatsappBtn" class="whatsapp-float" aria-label="Chat with Support">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="40" height="40">
+    </a>
+
+    <script src="js/main.js"></script>
+
+
+
+</body>
+</html>

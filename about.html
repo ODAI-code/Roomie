@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HOSTFind</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                 HOST<span>Find</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <!-- <li><a href="hostels.html">Find Hostels</a></li> -->
+                    <li><a href="locations.html">Locations</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="hostels.html" class="btn btn-primary nav-cta">Find a Hostel</a>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Section -->
+    <section class="section" style="background: var(--bg-color); text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h1 class="section-title">Simplifying Accommodation at UCC</h1>
+            <p style="max-width: 700px; margin: 0 auto; color: var(--text-light); font-size: 1.1rem; line-height: 1.6;">
+                UCC Hostel Finder eliminates fake agents, hidden markup fees, 
+                and stress by connecting students directly with verified hostel managers across Cape Coast.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Values / Mission Grid -->
+    <section class="section container">
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-icon">
+                    <i class="fa-solid fa-shield-check"></i>
+                </div>
+                <h3>100% Verified Properties</h3>
+                <p>Every listed hostel, room photo, and manager contact is physically verified by our campus team before publishing.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <h3>Zero Commission Scams</h3>
+                <p>Pay only a flat GH₵ 50 unlock fee. No middleman inflation, no arbitrary agent commissions on your yearly rent.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3>Instant Manager Unlock</h3>
+                <p>Secure Paystack checkout instantly reveals direct phone numbers and manager payment handles so you lock in your room quickly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Township Drone View Banner -->
+    <div class="container">
+        <section class="township-banner">
+            <h2>Built for UCC Students, by Developers Who Know Campus</h2>
+            <p>From Amamoma to Ayensu, Kwaprow and Ola, our mission is to ensure every UCC student finds safe, comfortable, and transparently priced housing every academic year.</p>
+            <a href="hostels.html" class="btn btn-accent">
+                <i class="fa-solid fa-building-user"></i> Browse Verified Hostels
+            </a>
+        </section>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a id="wa-float" href="#" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 HOSTFind. Built for University of Cape Coast Students.</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/hostel-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
